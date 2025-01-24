@@ -1,12 +1,14 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import "dotenv/config";
+import express from "express";
 
 import { Client, GatewayIntentBits, Events } from "discord.js";
 
-// const app = express();
+const app = express();
 
 const apiKey = process.env.API_KEY;
 const discordToken = process.env.DISCORD_TOKEN;
+
 
 
 // const commands = [
@@ -135,8 +137,14 @@ client.on(Events.MessageCreate, async (message) => {
 client.login(discordToken);
 // run server
 
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
+app.get("/", (req,res)=>{
+    res.json("Amjilttai ajillaj baina");
+})
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+export default app;
