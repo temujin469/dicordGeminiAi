@@ -1,14 +1,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import express from "express";
 import "dotenv/config";
 
 import { Client, GatewayIntentBits, Events } from "discord.js";
 
-const app = express();
+// const app = express();
 
-const apiKey = "AIzaSyCi0Ly-WG9nMo4WJu-UCVSErFw5CskNxxU";
-const discordToken =
-  "MTMzMjM5MTI0NDA4NDU0MzU3MA.GOzRZ5.FxiJ1R6yNomqYw25hzEasFv9WA44JEShlavqL0";
+const apiKey = process.env.API_KEY;
+const discordToken = process.env.DISCORD_TOKEN;
+
 
 // const commands = [
 //     {
